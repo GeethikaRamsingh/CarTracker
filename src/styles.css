@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+.btn-primary{
+    color:khaki; font-size:1.15em; margin-right:50px;
+    box-shadow:1px 1px 1px 1px transparent; background-color: transparent; border-color: antiquewhite;
+}
+.btn-primary:hover{color:#fff;background-color:transparent;border-color:white}
+.btn-primary:focus{box-shadow:1px 1px 1px 1px antiquewhite}
+.btn-primary:not([disabled]):not(.disabled).active,.btn-primary:not([disabled]):not(.disabled):active,.show>.btn-primary.dropdown-toggle{color:#fff;background-color: transparent;border-color:antiquewhite;box-shadow:0 0 0 0 transparent}
+table.menu {
+    width: auto;
+    margin-right: 0px;
+    margin-left: auto;
+}
+.table td, .table th {
+    border-top: none;
+    vertical-align: 0%;
+}
+
+.div {
+    margin-top:80px;background-color:aliceblue;height:100%;border-radius: 10px 10px 10px 10px;
+}
+
+.index{
+    text-align: center; font-size:2.5em;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    color:rgb(196, 58, 4); 
+    margin-bottom:50px
+}

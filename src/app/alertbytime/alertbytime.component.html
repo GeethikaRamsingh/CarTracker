@@ -1,0 +1,26 @@
+<div class="div">
+<table class="table">
+  <tr>
+    <th> HIGH Alerts  from: {{now1}} </th>
+    <th>  to: {{cal1}} </th>
+  </tr>
+</table>
+<table class="table">
+<thead>
+<tr>
+  <th>Vin Number</th>
+  <th>Reason</th>
+  <th>Priority</th>
+  <th>Time Recorded</th>
+</tr>
+</thead>
+<tbody *ngFor="let alert of alerts">
+<tr *ngIf="alert.prority == 'HIGH' && alert.epochtime < cal ">
+<td>{{alert.vin}}</td>
+<td>{{alert.reason}}</td>
+<td>{{alert.prority}}</td>
+<td>{{alert.epochtime | epocttotime}}</td>
+</tr>
+</tbody>
+</table>
+</div>

@@ -1,0 +1,26 @@
+<div>
+<div class="div">
+    <table class="table">
+        <thead>
+  <tr><th>Vin</th>
+    <th>Reason</th>
+    <th>Priority</th>
+    <th>Epochtime</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let alerts of alrts">
+  <tr>
+  <td>{{alerts.vin}}</td>
+  <td>{{alerts.reason}}</td>
+  <td>{{alerts.prority}}</td>
+  <td>{{alerts.epochtime}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>
+<table class="menu">
+    <tr>
+      <th><a [routerLink]="['/vehicles']" class="btn btn-primary" style="background-color:#716358">Go Back</a></th>
+    </tr>
+  </table>
+</div>

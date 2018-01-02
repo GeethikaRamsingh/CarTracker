@@ -1,0 +1,23 @@
+<div class="div">
+<table class="table">
+  <tbody *ngFor="let reading of readings">
+  <tr *ngIf="reading.speed ==82 && reading.epoch < ([now]-1800) ">
+    <td>
+      <table class="table">
+        <tr>      <th>Location of vehicle: <b>{{reading.epoch | epocttotime}}</b> </th> </tr>
+    <tr>
+      <td>
+      <agm-map [latitude] = reading.latitude [longitude] = reading.longitude>
+
+  <agm-marker [latitude] = reading.latitude [longitude] = reading.longitude>
+
+  </agm-marker>
+</agm-map>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>

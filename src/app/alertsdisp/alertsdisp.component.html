@@ -1,0 +1,40 @@
+<div class="div">
+  <table>
+<tr>
+  <th style="padding-left:50px"><h4>Sort by: </h4></th>
+  <th style="padding-right:250px">
+<select  #selec (mouseleave)="sort(selec.value)" style="border-radius: 3px 3px 3px 3px">
+  <option value="HIGH">high</option>
+  <option value="MEDIUM">medium</option>
+  <option value="LOW">low</option>
+</select></th>
+<th  style="padding-right:50px">
+  <table>
+    <tr>
+      <th><h4>Search Alerts:</h4></th>
+      <th><input type="text" class="form-control" #name1 (keyup)="0" placeholder="VIN number" style="width:200px;"></th>
+    </tr>
+  </table>
+</th>
+</tr>
+</table>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Vin Number</th>
+    <th>Reason</th>
+    <th>Priority</th>
+    <th>EpochTime</th>
+  </tr>
+  </thead>
+  <tbody  *ngFor="let alert of (alerts | searchFilter : name1.value )">
+    <tr *ngIf= "alert.prority == [selec.value] ">
+    <td>{{alert.vin}}</td>
+    <td>{{alert.reason}}</td>
+    <td>{{alert.prority}}</td>
+    <td>{{alert.epochtime}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>

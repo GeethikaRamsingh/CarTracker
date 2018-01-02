@@ -1,0 +1,55 @@
+<div class="div">
+<table class="table">
+<tr>
+<th><h4 style="text-align:right">Sort by:</h4></th>
+<th>
+  <select #cat (mouseleave)="fun1(cat.value)" style="border-radius: 3px 3px 3px 3px">
+  <option value="Speed">Speed</option>
+  <option value="FuelVolume">FuelVolume</option>
+  </select>
+</th>
+<th>
+<h4>Within last:</h4>
+</th>
+<th>
+  <select #time (mouseleave) = "fun2(time.value)" style="border-radius: 3px 3px 3px 3px" >
+  <option value ="1">1 hour</option>
+  <option value ="2">2 hours</option>
+  <option value ="3">3 hours</option>
+  <option value ="4">4 hours</option>
+  </select>
+</th>
+<th><h4>For more info:</h4></th>
+<th>
+  <input type="text" class="form-control" #vnum (keyup)="0" placeholder="Enter VIN number" style="width:200px">
+</th>
+</tr>
+</table>
+   
+<table class="table">
+  <thead>
+  <tr>
+    <th>Vin Number</th>
+    <th>Time Recorded</th>
+    <th>{{cat.value}}</th>
+  </tr>
+  </thead>
+  <ng-container *ngFor="let reading of (readings | searchFilter: vnum.value)">
+    <tbody *ngIf="[cat.value] == 'Speed' && reading.epoch < now">
+    <tr>
+      <td>{{reading.vin}}</td>
+      <td>{{reading.epoch | epocttotime}}</td>
+      <td>{{reading.speed}}</td>
+    </tr>
+    </tbody>
+    <tbody *ngIf="[cat.value] == 'FuelVolume' && reading.epoch < now">
+        <tr>
+          <td>{{reading.vin}}</td>
+          <td>{{reading.epoch | epocttotime}}</td>
+          <td>{{reading.fuelVolume}}</td>
+        </tr>
+    </tbody>
+  </ng-container>
+
+</table>
+</div>
